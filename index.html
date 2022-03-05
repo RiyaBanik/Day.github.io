@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+        <script type="text/JavaScript" src="https://MomentJS.com/downloads/moment.js"></script>
+        <style>
+          body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+    text-align: center;
+    margin-top: 10%;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="d-flex flex-column justify-content-center w-100 h-100">
+
+            <div class="d-flex flex-column justify-content-center align-items-center">
+        
+                <div class="btn-group my-5">
+                    <a href="https://codepen-api-export-production.s3.us-west-2.amazonaws.com/zip/PEN/pyBNzX/1578778289271/pure-css-gradient-background-animation.zip" class="btn btn-outline-light" aria-current="page"><i class="fas fa-file-download me-2"></i> </a>
+                    <a href="https://codepen.io/P1N2O/full/pyBNzX" class="btn btn-outline-light"><i class="fas fa-expand ms-2"></i></a>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        <h2> Enter your BirthDay</h2>
+        <!-- <input type="text" id="day"><br>
+        <h2>Enter your birth month</h2>
+        <input type="text" id="month"><br>
+        <button onclick="fn1()">Click Here</button>
+        <div id="box1"></div> -->
+        <input type="date" id="bday">
+        <button onclick="fn1()">Click Here</button>
+        <div id="box1"></div>
+        
+
+        
+        <h3>Date after 55 days: </h3>
+        <div id="box2"></div>
+        <button onclick="fn2()" id="btn-1">Click here</button><br>
+        <!-- <h2> Select Your Birthday</h2>
+        <input type="date" id="date2">
+        <h3>Days left for your Bday from today: </h3>
+        <button id="btn-1">Click here</button><br>
+     -->
+    </body>
+    <!-- <script src="app.js"></script> -->
+    <script type="text/JavaScript">
+        async function fn1(){
+        // var Date1 = document.getElementById("day").value;
+        // var Date2 = document.getElementById("month").value;
+        // var Date3 = moment().format("YYYY")
+        // var a = moment([Date3, Date2, Date1]);
+        // var b = moment()
+
+        // var days = a.diff(b, 'days') 
+        // document.getElementById("box1").innerHTML = days - 30; 
+        var a = document.getElementById("bday").value;
+        var b = moment();
+        // document.getElementById("box1").innerHTML = a ;
+        // document.getElementById("box1").innerHTML = b ;
+        var days = b.diff(a, 'days') 
+        document.getElementById("box1").innerHTML = days*(-1);
+        // document.getElementById("box1").innerHTML = moment([Date3, Date2, Date1]);
+        // document.getElementById("box1").innerHTML = moment();
+    }
+    async function fn2(){
+        myDate4 = moment().add(55,'days').format("do MMMM dddd YYYY")
+        document.getElementById("box2").innerHTML = myDate4;
+    }
+
+    </script>
+</html>
